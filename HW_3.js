@@ -174,4 +174,92 @@ for(let i = 3; i < 6; i++){
 
 //    Циклы while и for
 
+// Выведите столбец чисел от 1 до 100.
+/*
+let i = 1;        
+while( i<101){ // 
+    console.log(i);
+    i++;
+};
+for(let i = 1; i <= 100; i++){
+    console.log(i);
 
+//  Выведите столбец чисел от 11 до 33.
+let i = 11;        
+while( i<34){ // 
+    console.log(i);
+    i++;
+};
+for(let i = 11; i <= 33; i++){
+    console.log(i);
+*/
+// Выведите столбец четных чисел в промежутке от 0 до 100.
+/*
+let i = 1;        
+while( i<101){ // 
+    if (i%2==0){
+    console.log(i);
+    }
+    i++;
+};
+for(let i = 1; i <= 100; i++){
+    if (i%2==0){
+        console.log(i);
+        }
+}
+*/
+// С помощью цикла найдите сумму чисел от 1 до 100.     
+/*
+let rez = 0;
+let i = 1;   
+while( i<101){ // 
+    rez += i;
+    i++;
+};
+console.log(rez);
+for(let i = 1; i <= 100; i++){
+    rez += i;
+}
+console.log(rez);
+*/
+// Найти факториал введенного числа(использовать prompt).
+/*
+let prnun = prompt('введите число', 0);
+let rez = 1;
+prnun = Number(prnun);
+
+while(prnun>1){
+ rez *= prnun;
+ prnun--;    
+}
+console.log(rez);
+
+for(let i = 1; i<=prnun;i++){
+    rez *=i;
+}
+console.log(rez);
+*/
+
+// Дано число 5. Вывести в консоль число 555555555, не используя вычислений
+/*
+const numb = 5;
+let i = 1;
+rez = '';
+while(i<=9){
+    rez += String(numb);
+    i++
+}
+console.log(Number(rez));*/
+
+// Составьте массив дней недели. С помощью цикла for выведите все дни недели,
+// а текущий день выведите курсивом. Текущий день должен храниться в переменной day.
+const week = ['пн','вт','ср','чт','пт','сб','вск'];
+let date = new Date();
+let weekday = date.getDay();
+if(weekday === 0){weekday = 7};
+for(let i = 0; i <= week.length-1; i++){
+    if(i === weekday -1){
+        console.log('сегодня - '+ week[weekday -1]);
+    }else
+    console.log(week[i])
+}
