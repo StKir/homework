@@ -81,9 +81,9 @@ console.log(numerics);// [9,8,7,5,3,2,1]
 // Напишите код, объединяющий три массива цифр, и располагающий цифры, в полученном массиве, в
 // порядке убывания их значений.
 
-var a19 = [1,2,3];
-var b19 = [4,5,6];
-c19 = [7,8,9];
+let a19 = [1,2,3];
+let b19 = [4,5,6];
+let c19 = [7,8,9];
 function getArr(a, b, c) {
 const newnArray = [].concat(a, b, c);
 newnArray.sort((a,b)=> {return b-a})
@@ -115,7 +115,53 @@ for (let i = 0; i < 2; i++) {
 	}
 }
 console.log(sumg1);
-// for (let i = 0; i < arss.length; i++) {
-//     for (let j = 0; j < ass[i].length; j++) {
 
-// }
+// Дан массив с числами. Не используя метода reverse переверните его
+// элементы в обратном порядке.
+let numericsss = [5, 7, 2, 9, 3, 1, 8, 9, 10, 213];
+let v,g;
+for(let i = 0; i < Math.floor(numericsss.length/2); i++){
+    v = numericsss[i];
+    g = numericsss[numericsss.length - 1 - i];
+    numericsss[i] = g;
+    numericsss[(numericsss.length - 1)-i] = v;
+
+}
+console.log(numericsss);
+
+// Дан массив с числами. Узнайте сколько элементов с начала массива надо
+// сложить, чтобы в сумме получилось больше 10-ти.
+let numer = [1, 0, 0, 9, 3, 1, 8, 9, 10, 213];
+let fd = 0;
+for(let i = 0; i < numer.length-1; i++){
+    fd += numer[i];
+    if(fd > 10){
+        console.log(i+1);
+        break
+    }
+}
+// Сделайте функцию arrayFill, которая будет заполнять массив заданными значениями.
+// Первым параметром функция принимает значение, которым заполнять массив, а вторым - сколько
+// элементов должно быть в массиве. Пример: arrayFill('x', 5) сделает массив ['x', 'x', 'x', 'x', 'x'].
+function arrayFill(symb, num){
+    let masiv = [];
+    for(let i = 0; i < num; i++){
+        masiv.push(symb);
+    }
+    console.log(masiv);
+}
+arrayFill('x', 5);
+
+// Создайте объект и скопируйте данный объект с помощью: Object.assign() и spread оператора.
+// Изменить любое свойство в копии объекта, и проверить не изменился ли исходный.
+let UserInfo = {
+    name: 'Kirill',
+    level: 20,
+    indefication: true,
+}
+let UserInfoNew = Object.assign({}, UserInfo); // neизменяет
+UserInfoNew.indefication = false;
+console.log(UserInfoNew, UserInfo);
+let Objclone = {...UserInfo};
+Objclone.name = "Vasya";
+console.log(Objclone, UserInfo);
