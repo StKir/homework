@@ -9,19 +9,17 @@ console.log(vegetableLength); // 7,4,7,8;
 // в котором на каждой позиции будет находиться сумма элементов массива numbers до этой позиции
 // включительно.
 
-// let numbers = [2, 3, 5, 7, 11, 13, 17];
-// let newMassiv = [];
-// function currentSums(numbers){
-//     for(let i = 0; i< numbers.length; i++){
-//         let as = numbers.reduce((a,b)=> {
-//         return numbers[i] + numbers[i-1]}, 0)
-//         newMassiv.push(as)
-//     }
-//     console.log(newMassiv);
-// }
+let numberz = [2, 3, 5, 7, 11, 13, 17]
+let currentSums = (numbers) => {
+   let result = []
+   numbers.reduce(function(sum, current){
+       result.push(sum + current)
+       return sum+current 
+    }, 0)
+    return result
+}
 
-// currentSums(numbers);
-
+console.log(currentSums(numberz));
 // Напишите код, который получает из массива чисел новый массив, содержащий пары 
 // чисел, которые в сумме должны быть равны семи: (0:7), (1:6) и т.д.
 
@@ -162,6 +160,70 @@ let UserInfo = {
 let UserInfoNew = Object.assign({}, UserInfo); // neизменяет
 UserInfoNew.indefication = false;
 console.log(UserInfoNew, UserInfo);
+
 let Objclone = {...UserInfo};
 Objclone.name = "Vasya";
+delete Objclone.indefication;
 console.log(Objclone, UserInfo);
+
+// Создайте функцию, которая принимает 1 аргумент - объект пользователя user со свойствами
+// name, age, city. Функция должна возвращать новый объект пользователя с измененным полем 
+// name, при этом оригинальный объект user должен остаться неизменным.
+
+let UserOnline = {
+    name: 'Olga',
+    age: 32,
+    city: 'Moscow'
+}
+function ChanheObject(obj){
+    let NewObj = {...obj};
+    NewObj.name = 'Dima';
+    console.log(NewObj, obj);
+}
+ChanheObject(UserOnline);
+
+// Написать функцию которая будет принимать n-ое количество аргументов, в качестве
+// результата функция будет возвращать сумму всех четных элементов. Для решения использовать
+// цикл for (... of ...). 
+vector = [10,2,3,4,6,432,21,43,23,54,32];
+let summa = 0;
+function Zadacha15(arr){
+    for(element of arr){
+        if(element % 2 === 0){
+            summa += element;
+        }
+    }
+    return summa;
+}
+console.log(Zadacha15(vector));
+
+// Написать функцию, которая принимает слово и возвращает true, если
+// слово является палиндромом.
+let slovo1 = '';
+let slovo2 = '';
+function CheckPolindrom(str){
+    let arsPolind = str.split('');
+    for(let i = arsPolind.length-1; i >= 0; i--){
+        slovo1 += arsPolind[i];
+    }
+    return slovo1 == str ? true : false;
+}
+console.log(CheckPolindrom('ротор'));
+
+// Написать функцию которая будет принимать два массива, и в качестве
+// результата будет возвращать только те значения которые есть и в первом
+// и во втором массиве.
+maf = [1,7,5,9,3,5,6];
+maf2 = [7,4,4,6,7,5];
+function chechMasiv(arr, arr2){
+    let dopmas = [];
+    for(element of arr){
+        for(el of arr2){
+            if(element == el){
+                dopmas.push(el);
+            }
+        }
+    }
+    return dopmas;
+}
+console.log(chechMasiv(maf, maf2));
