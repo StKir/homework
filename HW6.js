@@ -113,22 +113,13 @@
 // console.log(func(firstUser)) // { name: 'Дмитрий', surName: 'Сидоров' }
 
 // console.log(firstUser) // { name: 'Василий', surName: 'Иванов' }
-// Создайте объекты двух персонажей с именами(name) с числовыми характеристиками
-// уровня(level), силы(strength), ловкости(agility) и интелекта(intellect). 
-// Для обоих персонажей создайте метод attack, который рассчитывает и возвращает
-// урон атаки путем сложения силы и ловкости, и метод fireball, который возвращает
-// урон файерболом путем умножения интеллекта на уровень персонажа. Далее создайте
-// метод combo, который возвращает сумму значений, которые возвращают методы  attackи fireball. 
-// После формирования объектов персонажей создайте функцию startFight, которая принимает
-// в себя два объекта и сравнивает результаты вызовов их методов combo и возвращает строку
-// “Победил ИМЯ_ПЕРСОНАЖА”.
 
 const Mag = {
     name: 'Алдуин',
     level: 15,
     strength: 10,
     agility: 3,
-    intellect: 18,
+    intellect: 10,
     atack: function(){
        return (this.strength + this.agility);
     },
@@ -136,7 +127,7 @@ const Mag = {
         return (this.level * this.intellect);
     },
     combo: function(){
-        return (this.atack + this.fireball);
+        return (this.atack() + this.fireball());
     },
 }
 const Hero = Object.assign({}, Mag);
