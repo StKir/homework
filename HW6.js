@@ -142,3 +142,22 @@ function startFight(obj1, obj2) {
     }else console.log(`Победил ${obj2.name}`);
 }
 startFight(Mag, Hero);
+
+// Напишите функцию, которая принимает 2 массива(они могут быть разной длины)
+// и функция возвращает новый массив, который состоит из сумм элементов с одинаковыми
+// индексами. Длина массива с результатами будет равна длине наименьшего массива. Например,
+// есть два массива [1, 2, 3, 4] и [2, 2, 3, 3, 1, 2]. Результирующий массив будет [3, 4, 6, 7]
+function getSumArray(arr1,arr2) {
+    let sum = [];
+    let a;
+    if(arr1.length > arr2.length){
+        a = arr2.length;
+    }else a = arr1.length;
+    for(let i = 0; i < a; i++){
+        sum.push(arr1[i] + arr2[i]); 
+    }
+    return sum;
+}
+ar1 = [1,2,3,4,5,6,7,8];
+ar2 = [1,2,3,4,5];
+console.log(getSumArray(ar1,ar2));
