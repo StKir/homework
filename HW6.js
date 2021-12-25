@@ -117,47 +117,29 @@
 const Mag = {
     name: 'Алдуин',
     level: 15,
-    strength: 10,
+    strength: 5,
     agility: 3,
     intellect: 10,
-    atack: function(){
-       return (this.strength + this.agility);
+    atack: function () {
+        return (this.strength + this.agility);
     },
-    fireball: function(){
+    fireball: function () {
         return (this.level * this.intellect);
     },
-    combo: function(){
+    combo: function () {
         return (this.atack() + this.fireball());
     },
-}
+};
 const Hero = Object.assign({}, Mag);
 Hero.name = 'Артур';
 Hero.level = 19;
 Hero.strength = 20;
 Hero.agility = 12;
 Hero.intellect = 3;
+
 function startFight(obj1, obj2) {
-    if(obj1.combo() > obj2.combo()){
+    if (obj1.combo() > obj2.combo()) {
         console.log(`Победил ${obj1.name}`);
-    }else console.log(`Победил ${obj2.name}`);
+    } else console.log(`Победил ${obj2.name}`);
 }
 startFight(Mag, Hero);
-
-// Напишите функцию, которая принимает 2 массива(они могут быть разной длины)
-// и функция возвращает новый массив, который состоит из сумм элементов с одинаковыми
-// индексами. Длина массива с результатами будет равна длине наименьшего массива. Например,
-// есть два массива [1, 2, 3, 4] и [2, 2, 3, 3, 1, 2]. Результирующий массив будет [3, 4, 6, 7]
-function getSumArray(arr1,arr2) {
-    let sum = [];
-    let a;
-    if(arr1.length > arr2.length){
-        a = arr2.length;
-    }else a = arr1.length;
-    for(let i = 0; i < a; i++){
-        sum.push(arr1[i] + arr2[i]); 
-    }
-    return sum;
-}
-ar1 = [1,2,3,4,5,6,7,8];
-ar2 = [1,2,3,4,5];
-console.log(getSumArray(ar1,ar2));
